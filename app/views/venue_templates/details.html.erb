@@ -57,10 +57,7 @@
   <% @the_venue.comments.each do |comment| %>
   <tr>
     <td>
-      <%commenter_id= comment.author_id%>
-      <%matching_user=User.where(:id => commenter_id)%>
-      <%user_record=matching_user.at(0)%>
-      <%=user_record.username%>
+      <%= comment.commenter.username %>
     </td>
 
     <td>
@@ -74,6 +71,7 @@
   
   <% end %>
 </table>
+
 
 <h3>Add a new comment</h3>
 
